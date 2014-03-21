@@ -16,6 +16,7 @@ while answer == 'y' and my_money > 0:
     ask_d = ''
     rate = 0
 
+    #Rate choice, obviously
     while rate <= 0 or rate > my_money:
         rate = int(raw_input("Choose rate between 1 and " + str_money + " dollars:  "))
     my_money -= rate
@@ -25,6 +26,7 @@ while answer == 'y' and my_money > 0:
     print "Round %d" %n_round
     print
 
+    #In real game cards go like this
     dealer_cards += random_card()
     my_cards += random_card()
     dealer_cards += random_card()
@@ -34,6 +36,7 @@ while answer == 'y' and my_money > 0:
     print "Dealer's cards: %d" %(dealer_cards)
     print
 
+    #Asking player for an extra card, if he needs it of course
     while my_cards < 21:
         while ask != 'y' and ask != "n":
             ask = raw_input('Do you want one more card?: (y/n)  ')
@@ -44,8 +47,10 @@ while answer == 'y' and my_money > 0:
         else:
             break
 
-    print
+    print #+1 extra 'print' +1 for output beaty
 
+    #In real game dealer decides to pick up one more card or not
+    #If the game is one on one of course
     if dealer_cards < my_cards and my_cards < 21:
         while dealer_cards < 21:
             while ask_d != 'y' and ask_d != "n":
@@ -57,7 +62,7 @@ while answer == 'y' and my_money > 0:
             else:
                 break
 
-    print
+    print #+1 extra 'print' +1 for output beaty
 
     if my_cards == 21:
         print "How lucky you are! You won %d $." % rate
@@ -74,7 +79,7 @@ while answer == 'y' and my_money > 0:
     else:
         print 'You lose, Sad to be you :(. Now you have only %d $' %(my_money)
 
-    n_round += 1
+    n_round += 1 #increasing the round number
     print
     if my_money == 0:
         print "Sorry, you bankrupt. You can not continue the game"
